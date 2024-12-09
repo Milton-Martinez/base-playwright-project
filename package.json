@@ -1,0 +1,27 @@
+{
+  "name": "lambdatest-ecommerce",
+  "version": "1.0.0",
+  "main": "index.js",
+  
+  "_comment":"The next scripts are added just to be examples, only the first one works",
+  "scripts": {
+    "test": "npx playwright test tests/ --project=chromium --headed",
+    
+    "test:e2e:all": "npx playwright test tests --project=all-browsers-and-tests",
+    "test:e2e:dev": "npx playwright test tests-examples/ --project=chromium --headed --retries=0 --reporter=html",
+    "test:e2e:smoke": "npx playwright test tests-examples/ --grep @smoke --project=chromium",
+    "test:e2e:non-smoke": "npx playwright test tests-examples/ --grep-invert @smoke --project=firefox",
+    "test:visual:acme": "npx playwright test example-applitools.spec.ts --project=chromium",
+    "test:visual:playwright": "npx playwright test example3.spec.ts --project=chromium",
+    "test:training-debug": "npx playwright test tests-training/ --project=chromium --debug",
+    "test:training": "npx playwright test tests-training/ --project=chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.1"
+  }
+}
